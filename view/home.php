@@ -9,47 +9,19 @@
     <div class="mb-5">
       <div class="section-title">Danh mục nổi bật</div>
       <div class="row g-3">
+        <?php foreach($dm as $item){ ?>
         <div class="col-6 col-md-3">
-          <a href="products.html?cat=smartphone" class="category-card d-block h-100">
+          <a href="products.php?id=<?= $item["id"]; ?>" class="category-card d-block h-100">
             <div class="category-icon"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34"
                 fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
                 <path
                   d="M11 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h6zm1 2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3z" />
                 <path d="M8 12.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
               </svg></div>
-            <div>Smartphone</div>
+            <div><?= $item["ten"] ?></div>
           </a>
         </div>
-        <div class="col-6 col-md-3">
-          <a href="products.html?cat=laptop" class="category-card d-block h-100">
-            <div class="category-icon"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34"
-                fill="currentColor" class="bi bi-laptop" viewBox="0 0 16 16">
-                <path
-                  d="M2.5 3a.5.5 0 0 0-.5.5V11h12V3.5a.5.5 0 0 0-.5-.5h-11zM2 12v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1H2zm2 2a1 1 0 0 1-1-1v-1h10v1a1 1 0 0 1-1 1H4z" />
-              </svg></div>
-            <div>Laptop</div>
-          </a>
-        </div>
-        <div class="col-6 col-md-3">
-          <a href="products.html?cat=wearable" class="category-card d-block h-100">
-            <div class="category-icon"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34"
-                fill="currentColor" class="bi bi-smartwatch" viewBox="0 0 16 16">
-                <path
-                  d="M4 3.5A2.5 2.5 0 0 1 6.5 1h3A2.5 2.5 0 0 1 12 3.5v9A2.5 2.5 0 0 1 9.5 15h-3A2.5 2.5 0 0 1 4 12.5v-9zM6.5 2A1.5 1.5 0 0 0 5 3.5v9A1.5 1.5 0 0 0 6.5 14h3A1.5 1.5 0 0 0 11 12.5v-9A1.5 1.5 0 0 0 9.5 2h-3z" />
-              </svg></div>
-            <div>Wearable</div>
-          </a>
-        </div>
-        <div class="col-6 col-md-3">
-          <a href="products.html?cat=phukien" class="category-card d-block h-100">
-            <div class="category-icon"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34"
-                fill="currentColor" class="bi bi-headphones" viewBox="0 0 16 16">
-                <path
-                  d="M8 3a5 5 0 0 0-5 5v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V8a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V8a5 5 0 0 0-5-5z" />
-              </svg></div>
-            <div>Phụ kiện</div>
-          </a>
-        </div>
+        <?php } ?>
       </div>
     </div>
     <!-- Sản phẩm mới -->
