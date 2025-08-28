@@ -1,14 +1,31 @@
 <?php
+require_once "./model/ConnectDB.php";
+
 class PageController
 {
-    public $view;
+    private $page;
+    private $db;
 
-    function __construct($view)
+    function __construct($page)
     {
-        $this->view = $view;
+        $this->page = $page;
+        $this->db = new ConnectDB(); // model DB
     }
+
     function view()
     {
-        require_once "./view/" . $this->view . ".php";
+        $data = [];
+
+        switch ($this->page) {
+            case "home":
+                $data["dm"] = $this->db->getAll("SELECT * FROM danhmuc");
+                break;
+
+            case "products":
+                break;
+        }
+
+        extract($data);
+        require "./view/{$this->page}.php";
     }
 }
